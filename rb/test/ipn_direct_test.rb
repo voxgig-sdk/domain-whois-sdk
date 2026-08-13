@@ -59,16 +59,16 @@ def ipn_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "DOMAINWHOIS_TEST_IPN_ENTID" => {},
-    "DOMAINWHOIS_TEST_LIVE" => "FALSE",
-    "DOMAINWHOIS_APIKEY" => "NONE",
+    "DOMAIN_WHOIS_TEST_IPN_ENTID" => {},
+    "DOMAIN_WHOIS_TEST_LIVE" => "FALSE",
+    "DOMAIN_WHOIS_APIKEY" => "NONE",
   })
 
-  live = env["DOMAINWHOIS_TEST_LIVE"] == "TRUE"
+  live = env["DOMAIN_WHOIS_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["DOMAINWHOIS_APIKEY"],
+      "apikey" => env["DOMAIN_WHOIS_APIKEY"],
     }
     client = DomainWhoisSDK.new(merged_opts)
     return {

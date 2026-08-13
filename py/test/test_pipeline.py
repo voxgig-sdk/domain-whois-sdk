@@ -16,11 +16,11 @@
 import pytest
 
 from domainwhois_sdk import DomainWhoisSDK
-from core.error import DomainWhoisError
-from core.result import DomainWhoisResult
-from core.response import DomainWhoisResponse
-from core.spec import DomainWhoisSpec
-from feature.base_feature import DomainWhoisBaseFeature
+from domainwhois_sdk.core.error import DomainWhoisError
+from domainwhois_sdk.core.result import DomainWhoisResult
+from domainwhois_sdk.core.response import DomainWhoisResponse
+from domainwhois_sdk.core.spec import DomainWhoisSpec
+from domainwhois_sdk.feature.base_feature import DomainWhoisBaseFeature
 
 
 def _client():

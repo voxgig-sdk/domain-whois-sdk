@@ -61,16 +61,16 @@ function domain_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["DOMAINWHOIS_TEST_DOMAIN_ENTID"] = {},
-    ["DOMAINWHOIS_TEST_LIVE"] = "FALSE",
-    ["DOMAINWHOIS_APIKEY"] = "NONE",
+    ["DOMAIN_WHOIS_TEST_DOMAIN_ENTID"] = {},
+    ["DOMAIN_WHOIS_TEST_LIVE"] = "FALSE",
+    ["DOMAIN_WHOIS_APIKEY"] = "NONE",
   })
 
-  local live = env["DOMAINWHOIS_TEST_LIVE"] == "TRUE"
+  local live = env["DOMAIN_WHOIS_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["DOMAINWHOIS_APIKEY"],
+      apikey = env["DOMAIN_WHOIS_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -43,8 +43,8 @@ class DomainWhoisTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('DOMAINWHOIS_TEST_LIVE');
-        $override = self::getenv('DOMAINWHOIS_TEST_OVERRIDE');
+        $live = self::getenv('DOMAIN_WHOIS_TEST_LIVE');
+        $override = self::getenv('DOMAIN_WHOIS_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class DomainWhoisTestRunner
             }
         }
 
-        $explain = self::getenv('DOMAINWHOIS_TEST_EXPLAIN');
+        $explain = self::getenv('DOMAIN_WHOIS_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['DOMAINWHOIS_TEST_EXPLAIN'] = $explain;
+            $m['DOMAIN_WHOIS_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

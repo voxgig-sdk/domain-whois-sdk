@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import DomainWhoisControl
-from core.error import DomainWhoisError
-from core.result import DomainWhoisResult
-from core.spec import DomainWhoisSpec
+from domainwhois_sdk.config import make_config
+from domainwhois_sdk.features import _make_feature
+from domainwhois_sdk.core.control import DomainWhoisControl
+from domainwhois_sdk.core.error import DomainWhoisError
+from domainwhois_sdk.core.result import DomainWhoisResult
+from domainwhois_sdk.core.spec import DomainWhoisSpec
 
 
 # True when this SDK was generated with the named feature.

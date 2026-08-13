@@ -19,11 +19,15 @@ import {
 describe('SslDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when DOMAINWHOIS_TEST_LIVE=TRUE.
-  afterEach(liveDelay('DOMAINWHOIS_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when DOMAIN_WHOIS_TEST_LIVE=TRUE.
+  afterEach(liveDelay('DOMAIN_WHOIS_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new DomainWhoisSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -80,19 +84,19 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'DOMAINWHOIS_TEST_SSL_ENTID': {},
-    'DOMAINWHOIS_TEST_LIVE': 'FALSE',
-    'DOMAINWHOIS_APIKEY': 'NONE',
+    'DOMAIN_WHOIS_TEST_SSL_ENTID': {},
+    'DOMAIN_WHOIS_TEST_LIVE': 'FALSE',
+    'DOMAIN_WHOIS_APIKEY': 'NONE',
   })
 
-  const live = 'TRUE' === env.DOMAINWHOIS_TEST_LIVE
+  const live = 'TRUE' === env.DOMAIN_WHOIS_TEST_LIVE
 
   if (live) {
     const client = new DomainWhoisSDK({
-      apikey: env.DOMAINWHOIS_APIKEY,
+      apikey: env.DOMAIN_WHOIS_APIKEY,
     })
 
-    let idmap: any = env['DOMAINWHOIS_TEST_SSL_ENTID']
+    let idmap: any = env['DOMAIN_WHOIS_TEST_SSL_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from domainwhois_sdk.utility.voxgig_struct import voxgig_struct as vs
 from domainwhois_sdk import DomainWhoisSDK
-from core import helpers
+from domainwhois_sdk.core import helpers
 from test import runner
 
 
@@ -58,16 +58,16 @@ def _ssl_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "DOMAINWHOIS_TEST_SSL_ENTID": {},
-        "DOMAINWHOIS_TEST_LIVE": "FALSE",
-        "DOMAINWHOIS_APIKEY": "NONE",
+        "DOMAIN_WHOIS_TEST_SSL_ENTID": {},
+        "DOMAIN_WHOIS_TEST_LIVE": "FALSE",
+        "DOMAIN_WHOIS_APIKEY": "NONE",
     })
 
-    live = env.get("DOMAINWHOIS_TEST_LIVE") == "TRUE"
+    live = env.get("DOMAIN_WHOIS_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("DOMAINWHOIS_APIKEY"),
+            "apikey": env.get("DOMAIN_WHOIS_APIKEY"),
         }
         client = DomainWhoisSDK(merged_opts)
         return {

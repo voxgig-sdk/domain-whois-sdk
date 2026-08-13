@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# DomainWhois SDK exists test
 
 import pytest
 from domainwhois_sdk import DomainWhoisSDK

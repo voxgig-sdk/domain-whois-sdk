@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ DomainWhoisUtility.registrar = ->(u) {
   u.prepare_params = DomainWhoisUtilities::PrepareParams
   u.prepare_path = DomainWhoisUtilities::PreparePath
   u.prepare_query = DomainWhoisUtilities::PrepareQuery
+  u.graphql_body = DomainWhoisUtilities::GraphqlBody
+  u.graphql_errors = DomainWhoisUtilities::GraphqlErrors
   u.result_basic = DomainWhoisUtilities::ResultBasic
   u.result_body = DomainWhoisUtilities::ResultBody
   u.result_headers = DomainWhoisUtilities::ResultHeaders

@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ DomainWhoisUtility::setRegistrar(function (DomainWhoisUtility $u): void {
     $u->prepare_params = [DomainWhoisPrepareParams::class, 'call'];
     $u->prepare_path = [DomainWhoisPreparePath::class, 'call'];
     $u->prepare_query = [DomainWhoisPrepareQuery::class, 'call'];
+    $u->graphql_body = [DomainWhoisGraphql::class, 'body'];
+    $u->graphql_errors = [DomainWhoisGraphql::class, 'errors'];
     $u->result_basic = [DomainWhoisResultBasic::class, 'call'];
     $u->result_body = [DomainWhoisResultBody::class, 'call'];
     $u->result_headers = [DomainWhoisResultHeaders::class, 'call'];
