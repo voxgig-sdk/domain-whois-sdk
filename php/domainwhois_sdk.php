@@ -40,7 +40,7 @@ class DomainWhoisSDK
         $utility = new DomainWhoisUtility();
         $this->_utility = $utility;
 
-        $config = DomainWhoisConfig::make_config();
+        $config = DomainWhoisConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

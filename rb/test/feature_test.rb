@@ -15,7 +15,7 @@ require_relative "../DomainWhois_sdk"
 module DomainWhoisFeatureHarness
   # True when this SDK was generated with the named feature.
   def self.has_feature?(name)
-    f = DomainWhoisConfig.make_config["feature"]
+    f = DomainWhoisConfig.shared_config["feature"]
     f.is_a?(Hash) && !f[name].nil?
   end
 

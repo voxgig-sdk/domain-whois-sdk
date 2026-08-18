@@ -28,7 +28,7 @@ class DomainWhoisSDK
     utility = DomainWhoisUtility.new
     @_utility = utility
 
-    config = DomainWhoisConfig.make_config
+    config = DomainWhoisConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
