@@ -19,6 +19,9 @@ module DomainWhoisConfig
     {
       "main" => {
         "name" => "DomainWhois",
+        "slug" => "domain-whois",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -195,6 +198,7 @@ module DomainWhoisConfig
             },
             {
               "name" => "suggest",
+              "short" => "Suggested correction for typos",
               "type" => "`$STRING`",
             },
             {
@@ -450,6 +454,7 @@ module DomainWhoisConfig
             },
             {
               "name" => "language",
+              "short" => "BCP 47 language tag",
               "type" => "`$STRING`",
             },
             {
@@ -460,6 +465,7 @@ module DomainWhoisConfig
                   "type" => "`$STRING`",
                 },
               },
+              "short" => "Text to check",
               "type" => "`$STRING`",
             },
           ],
@@ -578,6 +584,7 @@ module DomainWhoisConfig
             },
             {
               "name" => "entities",
+              "short" => "Include detected entity positions in response",
               "type" => "`$ARRAY`",
             },
             {
@@ -586,6 +593,7 @@ module DomainWhoisConfig
             },
             {
               "name" => "redact",
+              "short" => "Comma-separated PII types to redact.",
               "type" => "`$STRING`",
             },
             {
@@ -595,6 +603,7 @@ module DomainWhoisConfig
             {
               "name" => "text",
               "req" => true,
+              "short" => "Text to redact",
               "type" => "`$STRING`",
             },
           ],
