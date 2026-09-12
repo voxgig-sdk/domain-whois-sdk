@@ -76,7 +76,7 @@ def redact_basic_setup(extra)
     "DOMAIN_WHOIS_TEST_REDACT_ENTID" => idmap,
     "DOMAIN_WHOIS_TEST_LIVE" => "FALSE",
     "DOMAIN_WHOIS_TEST_EXPLAIN" => "FALSE",
-    "DOMAIN_WHOIS_APIKEY" => "NONE",
+    "DOMAIN_WHOIS_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -87,6 +87,9 @@ def redact_basic_setup(extra)
 
   if env["DOMAIN_WHOIS_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["DOMAIN_WHOIS_APIKEY"],
       },

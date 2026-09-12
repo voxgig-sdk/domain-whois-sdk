@@ -106,14 +106,22 @@ func email_validateDirectSetup(mockres any) *email_validateDirectSetupResult {
 	env := envOverride(map[string]any{
 		"DOMAIN_WHOIS_TEST_EMAIL_VALIDATE_ENTID": map[string]any{},
 		"DOMAIN_WHOIS_TEST_LIVE":    "FALSE",
-		"DOMAIN_WHOIS_APIKEY":       "NONE",
+		"DOMAIN_WHOIS_APIKEY":       "",
 	})
 
 	live := env["DOMAIN_WHOIS_TEST_LIVE"] == "TRUE"
 
 	if live {
-		mergedOpts := map[string]any{
+		// sdk-test-control.json's test.client.options seeds the live
+		// client; the generated fields below overwrite anything they name.
+		mergedOpts := map[string]any{}
+		for k, v := range liveClientOptions() {
+			mergedOpts[k] = v
+		}
+		for k, v := range map[string]any{
 			"apikey": env["DOMAIN_WHOIS_APIKEY"],
+		} {
+			mergedOpts[k] = v
 		}
 		client := sdk.NewDomainWhoisSDK(mergedOpts)
 

@@ -73,15 +73,17 @@ function generate_direct_setup($mockres)
     $env = Runner::env_override([
         "DOMAIN_WHOIS_TEST_GENERATE_ENTID" => [],
         "DOMAIN_WHOIS_TEST_LIVE" => "FALSE",
-        "DOMAIN_WHOIS_APIKEY" => "NONE",
+        "DOMAIN_WHOIS_APIKEY" => "",
     ]);
 
     $live = $env["DOMAIN_WHOIS_TEST_LIVE"] === "TRUE";
 
     if ($live) {
-        $merged_opts = [
+        // Merged so the generated fields win: sdk-test-control.json's
+        // test.client.options adds to the live client, it does not redirect it.
+        $merged_opts = array_merge(Runner::live_client_options(), [
             "apikey" => $env["DOMAIN_WHOIS_APIKEY"],
-        ];
+        ]);
         $client = new DomainWhoisSDK($merged_opts);
         return [
             "client" => $client,
