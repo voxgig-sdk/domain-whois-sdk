@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois'
+import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois-sdk'
 
 const client = new DomainWhoisSDK({
   apikey: process.env.DOMAIN_WHOIS_APIKEY,
@@ -805,7 +805,7 @@ domain-whois/
 Import the SDK from the package root:
 
 ```ts
-import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois'
+import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois-sdk'
 ```
 
 ### Entity state

@@ -105,7 +105,7 @@ local result, err = client:Utility():load({ input = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
+| TypeScript | `@voxgig-sdk/domain-whois-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
 | Python | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
 | PHP | `voxgig-sdk/domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/domain-whois-sdk/go` | `go get github.com/voxgig-sdk/domain-whois-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Utility():load({ input = "example" })
 ### TypeScript
 
 ```ts
-import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois'
+import { DomainWhoisSDK } from '@voxgig-sdk/domain-whois-sdk'
 
 const client = new DomainWhoisSDK({
   apikey: process.env.DOMAIN_WHOIS_APIKEY,
