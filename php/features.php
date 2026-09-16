@@ -4,7 +4,10 @@ declare(strict_types=1);
 // DomainWhois SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class DomainWhoisFeatures
@@ -14,8 +17,14 @@ class DomainWhoisFeatures
         switch ($name) {
             case "base":
                 return new DomainWhoisBaseFeature();
+            case "ratelimit":
+                return new DomainWhoisRatelimitFeature();
+            case "retry":
+                return new DomainWhoisRetryFeature();
             case "test":
                 return new DomainWhoisTestFeature();
+            case "timeout":
+                return new DomainWhoisTimeoutFeature();
             default:
                 return new DomainWhoisBaseFeature();
         }
@@ -31,7 +40,10 @@ class DomainWhoisFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;
