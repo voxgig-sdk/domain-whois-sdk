@@ -105,12 +105,12 @@ local result, err = client:Utility():load({ input = "example" })
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/domain-whois-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
-| Python | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
-| PHP | `voxgig-sdk/domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
+| TypeScript | `@voxgig-sdk/domain-whois-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/tags) |
+| Python | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/tags) |
+| PHP | `voxgig-sdk/domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/domain-whois-sdk/go` | `go get github.com/voxgig-sdk/domain-whois-sdk/go@latest` |
-| Ruby | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
-| Lua | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/releases) |
+| Ruby | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/tags) |
+| Lua | `voxgig-sdk-domain-whois` | publish pending — [install from git tag](https://github.com/voxgig-sdk/domain-whois-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/domain-whois-sdk/go-cli` | `go install github.com/voxgig-sdk/domain-whois-sdk/go-cli/cmd/domain-whois@latest` |
 | Go MCP server | `github.com/voxgig-sdk/domain-whois-sdk/go-mcp` | `go get github.com/voxgig-sdk/domain-whois-sdk/go-mcp@latest` |
 
