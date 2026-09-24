@@ -19,7 +19,6 @@ import type {
   DomainListMatch,
 } from '../DomainWhoisTypes'
 
-// TODO: needs Entity superclass
 class DomainEntity extends DomainWhoisEntityBase<Domain> {
 
   constructor(client: DomainWhoisSDK, entopts: any) {
