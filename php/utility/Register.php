@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 DomainWhoisUtility::setRegistrar(function (DomainWhoisUtility $u): void {
     $u->clean = [DomainWhoisClean::class, 'call'];
+    $u->clean_add = [DomainWhoisClean::class, 'add'];
+    $u->clean_explain = [DomainWhoisDone::class, 'clean_explain'];
     $u->done = [DomainWhoisDone::class, 'call'];
     $u->make_error = [DomainWhoisMakeError::class, 'call'];
     $u->feature_add = [DomainWhoisFeatureAdd::class, 'call'];

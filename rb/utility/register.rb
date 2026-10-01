@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 DomainWhoisUtility.registrar = ->(u) {
   u.clean = DomainWhoisUtilities::Clean
+  u.clean_add = DomainWhoisUtilities::CleanAdd
+  u.clean_explain = DomainWhoisUtilities::CleanExplain
   u.done = DomainWhoisUtilities::Done
   u.make_error = DomainWhoisUtilities::MakeError
   u.feature_add = DomainWhoisUtilities::FeatureAdd
