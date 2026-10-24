@@ -21,6 +21,7 @@ export DOMAIN_WHOIS_APIKEY=sk_live_xxx
 # 4. Each command line is ONE boru expression, run against the API:
 ./domain-whois-cli load 1 dns_result            # {id:1} shorthand
 ./domain-whois-cli load '{id:1}' dns_result       # explicit match map
+./domain-whois-cli list domain
 
 # 5. Override the API base URL for a single call
 DOMAIN_WHOIS_BASE=https://api.example.com ./domain-whois-cli load 1 dns_result
